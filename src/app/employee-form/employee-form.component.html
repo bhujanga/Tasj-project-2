@@ -1,0 +1,24 @@
+
+  <form #employeeForm="ngForm" (ngSubmit)="submitEmployeeDetails()" name="employeeForm"> 
+     <div class="col-md-12">
+       <label>Mobile: </label>
+       <input type="text" class="form-control" name="mobile" #mobile="ngModel" [(ngModel)]="employeeDetails.mobile" required>
+         <span style="color: red" *ngIf="employeeForm.submitted && employeeForm.controls.mobile.invalid">This field is required</span>
+       <br/> 
+       <label>Email: </label>
+       <input type="text" class="form-control" name="email" [(ngModel)]="employeeDetails.email" >
+       <br/>
+       <label>Designation: </label>
+       <input type="text" class="form-control" name="designation" [(ngModel)]="employeeDetails.designation">
+       <br/>
+       <label>Dept Name: </label>
+       <input type="text" class="form-control" name="deptname" [(ngModel)]="employeeDetails.deptName">
+       <br/>
+       <label>Company Name: </label>
+       <input type="text" class="form-control" name="companyName" [(ngModel)]="employeeDetails.comapyName">
+     </div>
+     <br/>
+     <div class="row">
+       <button class="btn btn-success col-md-6 offset-md-3">Submit</button>
+     </div>
+  </form>
