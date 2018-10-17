@@ -9,6 +9,7 @@ import { EmployeeDetails } from './employee-form/employee-form.classes';
 })
 export class AppComponent  implements OnInit
 {
+  showSingle: boolean = true;
   title = 'sample-demo-angular';
   employeeDetails: EmployeeDetails[] = [];
   constructor(public employeeService: EmployeeeService) {
@@ -17,17 +18,17 @@ export class AppComponent  implements OnInit
   ngOnInit(){
     this.getEmployees();
   }
-  
+
   getEmployees(){
-    console.log('app component');
+    console.log('app component success');
     this.employeeService.getEmployees().subscribe(
       (data) => {
         this.employeeDetails = data;
-        console.log('app component');
+        console.log('app component again');
         console.log(this.employeeDetails);
       },
       (error) => {
-  
+        console.log(error);
       }
     )
   }

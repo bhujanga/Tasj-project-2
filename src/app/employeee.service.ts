@@ -9,11 +9,15 @@ export class EmployeeeService {
 
   constructor(private httpClient: HttpClient) { }
 
-  submitEmployee(employeeDetails: EmployeeDetails){
+  submitEmployee(employeeDetails: EmployeeDetails) {
     return this.httpClient.post<any>('http://localhost:8080/create', employeeDetails);
   }
 
-  getEmployees(){
+  getEmployees() {
     return this.httpClient.get<any>('http://localhost:8080/getAll');
+  }
+
+  submitEmployeesList(employeeDetails: EmployeeDetails[]) {
+    return this.httpClient.post<any>('http://localhost:8080/createList', employeeDetails);
   }
 }

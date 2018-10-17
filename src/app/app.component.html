@@ -4,11 +4,16 @@
       <h2>Employee Details</h2>
       <hr/>
     </div>
+    <button class="btn btn-primary col-md-2" (click)="showSingle = true">Single</button>&nbsp;
+    <button class="btn btn-primary col-md-2" (click)="showSingle = false">Multiple</button>
   </div>
 </div>
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-6" *ngIf="showSingle">
       <app-employee-form (formSubmitted)="getEmployees()"></app-employee-form>
+  </div>
+  <div class="col-md-6" *ngIf="!showSingle">
+    <app-multiple-forms (formSubmitted)="getEmployees()"></app-multiple-forms>
   </div>
   <div class="col-md-6">
       <app-employee-table [employeeDetails]="employeeDetails"></app-employee-table>

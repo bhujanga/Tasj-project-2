@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
 import { EmployeeTableComponent } from './employee-table/employee-table.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MultipleFormsComponent } from './multiple-forms/multiple-forms.component';
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeFormComponent,
-    EmployeeTableComponent
+    EmployeeTableComponent,
+    MultipleFormsComponent
   ],
   imports: [
     BrowserModule,

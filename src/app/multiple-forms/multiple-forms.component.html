@@ -1,0 +1,26 @@
+
+<form #employeeMultipleForm="ngForm" (ngSubmit)="submitEmployeeDetails()" name="employeeForm">
+  <div class="row">
+  <div class="col-md-4 form-group" *ngFor="let employeeDetails of employeeDetailsArray">
+    <label>Mobile: </label>
+    <input type="text" class="form-control" name="mobile" #mobile="ngModel" [(ngModel)]="employeeDetails.mobile" required>
+    <span style="color: red" *ngIf="employeeMultipleForm.submitted && employeeDetails.mobile == ''">This field is required</span>
+    <br/>
+    <label>Email: </label>
+    <input type="text" class="form-control" name="email" [(ngModel)]="employeeDetails.email" >
+    <br/>
+    <label>Designation: </label>
+    <input type="text" class="form-control" name="designation" [(ngModel)]="employeeDetails.designation">
+    <br/>
+    <label>Dept Name: </label>
+    <input type="text" class="form-control" name="deptname" [(ngModel)]="employeeDetails.deptName">
+    <br/>
+    <label>Company Name: </label>
+    <input type="text" class="form-control" name="companyName" [(ngModel)]="employeeDetails.comapyName">
+  </div>
+  </div>
+  <br/>
+  <div class="row">
+    <button class="btn btn-success col-md-6 offset-md-3">Submit</button>
+  </div>
+</form>
