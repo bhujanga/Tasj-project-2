@@ -9,7 +9,6 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./employee-form.component.css']
 })
 export class EmployeeFormComponent implements OnInit {
-
   employeeDetails: EmployeeDetails;
   @Output() formSubmitted = new EventEmitter(); 
   @ViewChild('employeeForm') employeeForm: NgForm;
